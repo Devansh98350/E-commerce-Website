@@ -11,6 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
   //form function
@@ -23,6 +24,7 @@ const Register = () => {
         password,
         phone,
         address,
+        answer,
       });
       if (res.data.success) {
         toast.success(res.data.message);
@@ -99,6 +101,18 @@ const Register = () => {
               className="form-control"
               id="exampleInputAddress"
               placeholder="Enter your address"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            {/*<label htmlFor="exampleInputName" className="form-label">Address</label>*/}
+            <input
+              type="text"
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              className="form-control"
+              id="exampleInputPlayer"
+              placeholder="Who is your favourite player?"
               required
             />
           </div>
